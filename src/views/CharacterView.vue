@@ -1,13 +1,13 @@
 <template>
   <div class="text-white">
-    <img class="h-96 object-center mx-auto" src="https://logos-world.net/wp-content/uploads/2022/01/Rick-And-Morty-Logo.png" />
+    <img class="h-32 md:h-80 object-center mx-auto" src="https://logos-world.net/wp-content/uploads/2022/01/Rick-And-Morty-Logo.png" />
   </div>
     <div v-if="state.isLoading" class="absolute right-1/2 bottom-1/2  transform translate-x-1/2 translate-y-1/2 ">
-      <div class="border-t-transparent border-solid animate-spin  rounded-full border-blue-400 border-8 h-32 w-32">
+      <div class="border-t-transparent border-solid animate-spin rounded-full border-blue-900 border-8 h-32 w-32">
     </div>
   </div>
-  <div v-else class="flex flex-row gap-20 flex-wrap justify-between">
-      <div v-for="character in state.characters" :key="character.id" class="bg-black/40 border-black/90 border-2 flex flex-col shadow-xl w-80 rounded-md h-[21rem]">
+  <div v-else class="flex flex-row gap-8 flex-wrap justify-center">
+      <div v-for="character in state.characters" :key="character.id" class="bg-black/40 border-black/90 border-2 flex flex-col shadow-lg w-80 rounded-md h-[21rem]">
           <div class="text-white">
             <div v-if="character.status === 'Alive'">
               <img class="h-28 w-28 rounded-full mx-auto my-6 border-2" :src="character.image">
@@ -18,7 +18,7 @@
             <div v-else>
               <img class="h-28 w-28 rounded-full mx-auto my-6 border-2" :src="character.image">
             </div>
-            <p class="text-2xl text-center">{{ character.name }}</p>
+            <h1 class="text-xl text-center">{{ character.name }}</h1>
             <div v-if="character.status === 'Alive'">
               <p class="mx-auto text-center text-green-400">{{ character.status }}</p>
             </div>
@@ -37,10 +37,13 @@
 
 <script setup lang="ts">
 
-//character list
 //responsive majaslapa
 
 import { onMounted, reactive, ref } from 'vue';
+
+onMounted(() => {
+  fetchData();
+});
 
 const url = ref("https://rickandmortyapi.com/api/character");
 
@@ -65,9 +68,5 @@ const fetchData = async() => {
     .then((data) => state.characters = data.results);
   state.isLoading = false;
 }
-
-onMounted(() => {
-  fetchData();
-});
 
 </script>

@@ -5,7 +5,7 @@ import { RouterLink, RouterView } from 'vue-router'
 <template>
       <nav class="flex gap-5 text-white">
         <RouterLink to="/" class="hover:-translate-y-1 hover:scale-110 transition ease-in-out delay-90">Home</RouterLink>
-        <RouterLink to="/characters" class="hover:-translate-y-1 hover:scale-110 transition ease-in-out delay-90">characters</RouterLink>
+        <RouterLink to="/" class="hover:-translate-y-1 hover:scale-110 transition ease-in-out delay-90">characters</RouterLink>
       </nav>
 
   <RouterView />
