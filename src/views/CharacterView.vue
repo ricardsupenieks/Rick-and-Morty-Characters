@@ -17,13 +17,12 @@
         </li>
       </ul>
 
-      <div class="text-white flex flex-col gap-10 mt-10 justify-center text-xl">
-        <div class="flex justify-center items-center">
-          <button v-if="visibleCount < totalCharacterCount" @click="visibleCount = visibleCount + STEP" class="inline-flex items-center text-white px-4 py-2 text-sm font-medium border border-transparent rounded-md shadow-sm select-none focus:outline-none focus:ring-2 focus:ring-offset-2 hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-150">
-            <svg class="w-12 h-12 text-white group-hover:animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 13l-3 3m0 0l-3-3m3 3V8m0 13a9 9 0 110-18 9 9 0 010 18z"></path>
+      <div class="text-white flex flex-col gap-10 mt-10 justify-center text-xl focus:outline-0">
+        <div class="flex justify-center items-center focus:outline-0">
+          <button v-if="visibleCount < totalCharacterCount" @click="visibleCount = visibleCount + STEP" class="focus:outline-0 rounded-full text-sm font-medium select-none focus:ring-2 focus:ring-offset-2 transform hover:-translate-y-0.5 transition-all duration-150">
+            <svg class="w-12 h-12 text-white group-hover:animate-bounce focus:outline-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path class="focus:outline-0" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 13l-3 3m0 0l-3-3m3 3V8m0 13a9 9 0 110-18 9 9 0 010 18z"></path>
             </svg>
-
           </button>
         </div>
         <div class="flex flex-row justify-center gap-2">
@@ -48,8 +47,8 @@ import MainContainer from '@/components/MainContainer.vue';
 import { useRoute, useRouter } from 'vue-router';
 
 const url = ref("https://rickandmortyapi.com/api/character/");
-const DEFAULT_VISIBLE_CHARACTERS = 12;
-const STEP = 8;
+const DEFAULT_VISIBLE_CHARACTERS = 4;
+const STEP = 4;
 
 const visibleCount = ref(DEFAULT_VISIBLE_CHARACTERS);
 
