@@ -1,5 +1,5 @@
 <template>
-    <div class="flex flex-col md:flex-row text-white my-6 rounded-l-full">
+    <div class="flex flex-col md:flex-row text-white my-6">
         <div class="mx-auto"><img :src="props.image" :class="{
             'rounded-full border-2 mx-6 h-48 md:h-auto filter grayscale': props.status === 'Dead',
             'rounded-full border-2 mx-6 h-48 md:h-auto': props.status === 'Alive' || props.status === 'unknown',
@@ -24,7 +24,7 @@
                 <div class="flex flex-col">
                     <h1 class="text-left text-3xl mb-2">Location:</h1>
                     <p class="text-left">Origin location: {{ props.origin.name}}</p>
-                    <p class="text-left">Last known location: {{ props.location.name}}</p>
+                    <p class="text-left mt-2">Last known location: {{ props.location.name}}</p>
                 </div>          
             </div>
         </ul>
