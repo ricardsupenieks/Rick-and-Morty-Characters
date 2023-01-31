@@ -1,18 +1,15 @@
 <template>
   <MainContainer>
-    <div v-if="state.isLoading">
-      <Spinner />
-    </div>
+    <div v-if="state.isLoading"><Spinner /></div>
 
     <div v-else>
       <ul class="flex flex-row gap-8 flex-wrap justify-center">
         <li v-for="character in visibleCharacters" :key="character.id"
           class="bg-black/40 border-black/20 border-2 flex flex-col shadow-lg w-80 rounded-md h-[21rem] text-white">
-          <CharacterCard :id="character.id" :name="character.name" :status="character.status"
+          <CharacterCard @click="" :id="character.id" :name="character.name" :status="character.status"
             :species="character.species" :type="character.type" :gender="character.gender" :image="character.image" />
         </li>
       </ul>
-
 
       <div class="flex justify-center items-center focus:outline-0 my-10">
         <button v-if="visibleCount < totalCharacterCount" @click="visibleCount = visibleCount + STEP"
