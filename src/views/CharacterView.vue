@@ -26,11 +26,11 @@
           </button>
         </div>
         <div class="flex flex-row justify-center gap-2">
-          <button @click="handlePrevPage" :disabled="page === 1" class="text-white hover:-translate-y-1 hover:scale-110 transition ease-in-out delay-90">
+          <button @click="handlePrevPage" :disabled="page === FIRST_PAGE" class="text-white hover:-translate-y-1 hover:scale-110 transition ease-in-out delay-90">
             &lt
           </button>
           <p>Page {{ page }}</p>
-          <button @click="handleNextPage" :disabled:="page === 42" class="text-white hover:-translate-y-1 hover:scale-105 transition ease-in-out delay-90">
+          <button @click="handleNextPage" :disabled:="page === LAST_PAGE" class="text-white hover:-translate-y-1 hover:scale-105 transition ease-in-out delay-90">
             >
           </button>
         </div>
@@ -47,8 +47,11 @@ import MainContainer from '@/components/MainContainer.vue';
 import { useRoute, useRouter } from 'vue-router';
 
 const url = ref("https://rickandmortyapi.com/api/character/");
-const DEFAULT_VISIBLE_CHARACTERS = 4;
+const DEFAULT_VISIBLE_CHARACTERS = 8;
 const STEP = 4;
+
+const FIRST_PAGE = 1;
+const LAST_PAGE = 42;
 
 const visibleCount = ref(DEFAULT_VISIBLE_CHARACTERS);
 
