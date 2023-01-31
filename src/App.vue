@@ -8,6 +8,5 @@ import { RouterLink, RouterView } from 'vue-router'
     <RouterLink to="/" class="hover:-translate-y-1 hover:scale-110 transition ease-in-out delay-90">characters
     </RouterLink>
   </nav> -->
-
   <RouterView />
 </template>
