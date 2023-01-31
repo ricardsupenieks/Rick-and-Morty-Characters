@@ -17,16 +17,21 @@
         </li>
       </ul>
 
-      <div class="text-white flex flex-col justify-center mt-10 text-xl">
-        <button v-if="visibleCount < totalCharacterCount" @click="visibleCount = visibleCount + STEP" class="text-white my-5">
-          Load more
-        </button>
+      <div class="text-white flex flex-col gap-10 mt-10 justify-center text-xl">
+        <div class="flex justify-center items-center">
+          <button v-if="visibleCount < totalCharacterCount" @click="visibleCount = visibleCount + STEP" class="inline-flex items-center text-white px-4 py-2 text-sm font-medium border border-transparent rounded-md shadow-sm select-none focus:outline-none focus:ring-2 focus:ring-offset-2 hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-150">
+            <svg class="w-12 h-12 text-white group-hover:animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 13l-3 3m0 0l-3-3m3 3V8m0 13a9 9 0 110-18 9 9 0 010 18z"></path>
+            </svg>
+
+          </button>
+        </div>
         <div class="flex flex-row justify-center gap-2">
           <button @click="handlePrevPage" :disabled="page === 1" class="text-white hover:-translate-y-1 hover:scale-110 transition ease-in-out delay-90">
             &lt
           </button>
           <p>Page {{ page }}</p>
-          <button @click="handleNextPage" :disabled:="page === 42" class="text-white hover:-translate-y-1 hover:scale-110 transition ease-in-out delay-90">
+          <button @click="handleNextPage" :disabled:="page === 42" class="text-white hover:-translate-y-1 hover:scale-105 transition ease-in-out delay-90">
             >
           </button>
         </div>
