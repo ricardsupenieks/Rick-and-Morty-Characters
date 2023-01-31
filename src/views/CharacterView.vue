@@ -17,23 +17,21 @@
         </li>
       </ul>
 
-      <div>
-        <button v-if="visibleCount < totalCharacterCount" @click="visibleCount = visibleCount + STEP" class="bg-blue-500">
+      <div class="text-white flex flex-col justify-center mt-10 text-xl">
+        <button v-if="visibleCount < totalCharacterCount" @click="visibleCount = visibleCount + STEP" class="text-white my-5">
           Load more
         </button>
-      </div>
-
-      <div>
-        <button @click="handleNextPage" :disabled:="page === 42">
-          Next page
-        </button>
-        <button @click="handlePrevPage" :disabled="page === 1">
-          Prev page
-        </button>
+        <div class="flex flex-row justify-center gap-2">
+          <button @click="handlePrevPage" :disabled="page === 1" class="text-white hover:-translate-y-1 hover:scale-110 transition ease-in-out delay-90">
+            &lt
+          </button>
+          <p>Page {{ page }}</p>
+          <button @click="handleNextPage" :disabled:="page === 42" class="text-white hover:-translate-y-1 hover:scale-110 transition ease-in-out delay-90">
+            >
+          </button>
+        </div>
       </div>
     </div>
-
-    
   </MainContainer>
 </template>
 
@@ -43,7 +41,6 @@ import axios from 'axios';
 import CharacterCard from '@/components/CharacterCard.vue';
 import MainContainer from '@/components/MainContainer.vue';
 import { useRoute, useRouter } from 'vue-router';
-import type { Page } from 'csstype';
 
 const url = ref("https://rickandmortyapi.com/api/character/");
 const DEFAULT_VISIBLE_CHARACTERS = 12;
@@ -77,11 +74,13 @@ const updateData = () => {
 const handleNextPage = () => {
   page.value++;
   updateData();
+  window.scrollTo(0, 0);
 }
 
 const handlePrevPage = () => {
   page.value--;
   updateData();
+  window.scrollTo(0, 0);
 }
 
 onMounted(() => {
