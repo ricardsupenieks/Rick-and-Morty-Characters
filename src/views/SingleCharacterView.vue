@@ -1,9 +1,8 @@
 <template>
     <MainContainer>
         <div v-if="state.isLoading"><Spinner /></div>
-        <div v-if="state.error">Error</div>
 
-        <div v-if="state.character" class="bg-black/20 border-black/20 border-2 shadow-lg w-[1000px] mx-auto rounded-l-full">
+        <div v-if="state.character" class="bg-black/20 border-black/20 border-2 shadow-lg max-w-[1000px] lg:max-w-none lg:w-[1000px] mx-auto rounded-l-full">
             <CharacterPage 
                 :id="state.character.id" 
                 :image="state.character.image"
@@ -12,7 +11,6 @@
                 :species="state.character.species"
                 :type="state.character.type"
                 :gender="state.character.gender"
-                :created="state.character.created"
                 :location="state.character.location"
                 :origin="state.character.origin"
             />
@@ -26,7 +24,7 @@ import { onMounted, reactive } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import MainContainer from '@/components/MainContainer.vue';
 import Spinner from '@/components/Spinner.vue';
-import CharacterPage from '@/components/CharacterPage.vue';
+import CharacterPage from '@/components/SingleCharacterCard.vue';
 
 onMounted(() => {
     fetchSingleCharacter();
@@ -66,7 +64,6 @@ interface Character {
 };
 
 interface SingleCharacter extends Character {
-    created: Date;
     location: {
         name: string,
         url:string,

@@ -26,7 +26,6 @@
                     <p class="text-left">Origin location: {{ props.origin.name}}</p>
                     <p class="text-left">Last known location: {{ props.location.name}}</p>
                 </div>          
-                <!-- <li class="text-left">{{ props.created}}</li> -->
             </div>
         </ul>
     </div>
@@ -37,7 +36,6 @@
 const props = defineProps<SingleCharacter>();
 
 interface SingleCharacter extends Character {
-    created: Date;
     location: {
         name: string,
         url:string,
