@@ -1,8 +1,8 @@
 <template>
-    <div class="flex flex-row text-white my-6 rounded-l-full">
-        <div><img :src="props.image" :class="{
-            'rounded-full border-2 mx-6 filter grayscale': props.status === 'Dead',
-            'rounded-full border-2 mx-6': props.status === 'Alive' || props.status === 'unknown',
+    <div class="flex flex-col md:flex-row text-white my-6 rounded-l-full">
+        <div class="mx-auto"><img :src="props.image" :class="{
+            'rounded-full border-2 mx-6 h-48 md:h-auto filter grayscale': props.status === 'Dead',
+            'rounded-full border-2 mx-6 h-48 md:h-auto': props.status === 'Alive' || props.status === 'unknown',
             }"/>
         </div>
 
@@ -14,7 +14,7 @@
                 'mx-auto text-center text-stone-500 text-xl my-2': props.status === 'unknown'
                 }">{{ props.status }}</p>
 
-            <div class="flex flex-row justify-evenly">
+            <div class="flex flex-col md:flex-row ml-6 md:ml-0 gap-5 md:gap-0 justify-evenly">
                 <div class="flex flex-col">
                     <h1 class="text-left text-3xl mb-2">Species:</h1>
                     <p v-if="props.type !== ''" class="text-left"> {{ props.species }} ({{ props.type }}), {{ props.gender }}</p>

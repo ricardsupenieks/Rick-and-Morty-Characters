@@ -2,7 +2,7 @@
     <MainContainer>
         <div v-if="state.isLoading"><Spinner /></div>
 
-        <div v-if="state.character" class="bg-black/20 border-black/20 border-2 shadow-lg max-w-[1000px] lg:max-w-none lg:w-[1000px] mx-auto rounded-l-full">
+        <div v-if="state.character" class="bg-black/20 border-black/20 border-2 shadow-lg mx-auto  max-w-[1000px] lg:max-w-none lg:w-[1000px] md:rounded-l-full">
             <CharacterPage 
                 :id="state.character.id" 
                 :image="state.character.image"
