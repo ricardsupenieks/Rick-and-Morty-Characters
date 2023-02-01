@@ -1,11 +1,10 @@
 <template>
   <MainContainer>
     <div v-if="state.isLoading"><Spinner /></div>
-
     <div v-else class="text-sm md:text-base">
       <ul class="flex flex-row gap-8 flex-wrap justify-center">
         <li v-for="character in visibleCharacters" :key="character.id"
-          class="bg-black/40 border-black/20 border-2 flex flex-col shadow-lg w-80 rounded-md h-[21rem] text-white">
+          class="bg-black/40 border-black/20 border-2 flex flex-col shadow-lg w-80 rounded-md h-[21rem] text-white hover:-translate-y-1 hover:scale-105 transition ease-in-out delay-90">
           <CharacterCard @click="" :id="character.id" :name="character.name" :status="character.status"
             :species="character.species" :type="character.type" :gender="character.gender" :image="character.image" />
         </li>
