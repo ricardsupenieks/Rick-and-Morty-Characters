@@ -1,7 +1,7 @@
 # Rick and Morty Character site
 
 ## Desciption
-Small project aimed at learning more VueJS and improve styling skills. 
+Small project aimed at learning more VueJS and improving my styling skills. 
 
 
 
