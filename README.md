@@ -27,7 +27,7 @@ Small project aimed at learning more VueJS and improve styling skills.
 ![](https://github.com/ricardsupenieks/rick-and-morty-characters/blob/main/demo/showcase.gif)
 
 ### All character view
-![](https://github.com/ricardsupenieks/Todo-vue/blob/main/demo/main.png)
+![](https://github.com/ricardsupenieks/rick-and-morty-characters/blob/main/demo/all.png)
 
 ### Character single view
 ![](https://github.com/ricardsupenieks/rick-and-morty-characters/blob/main/demo/single.png)
