@@ -1,5 +1,3 @@
-# Character-list
-
 # Rick and Morty Character site
 
 ## Desciption
